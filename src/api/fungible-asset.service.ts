@@ -14,7 +14,6 @@ import {
   BalanceDistributionResponse,
   RewardsResponse,
 } from './fungible-asset.dto'
-import axios from 'axios'
 import { ethers } from 'ethers'
 import { Cache } from '../lib/cache'
 import { config } from '../config'
@@ -185,8 +184,8 @@ export class FungibleAssetService {
     }
     console.log(denom)
     let denominator = 0
-    if (denom === 'move/07d1fef22a2d391eb47922148d58dc77db025f12d014ae98437a6fac051de4c4') denominator = 0.9
-    if (denom === 'move/35767058b322a9838d9bec0a7e96a19ab313a09d6b421bd6ee8ad675db7a687d') denominator = 0.1
+    if (denom === 'move/07d1fef22a2d391eb47922148d58dc77db025f12d014ae98437a6fac051de4c4') denominator = 1
+    if (denom === 'move/35767058b322a9838d9bec0a7e96a19ab313a09d6b421bd6ee8ad675db7a687d') denominator = 0
 
     const provider = new ethers.JsonRpcProvider('https://jsonrpc-yominet-1.anvil.asia-southeast.initia.xyz')
     const tokenAddress = '0x4badfb501ab304ff11217c44702bb9e9732e7cf4'
